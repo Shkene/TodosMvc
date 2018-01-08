@@ -13,14 +13,14 @@
 
 Cypress.Commands.add('createDefaultTodos', function(){
 
-  var TODO_ITEM_ONE   = 'buy some cheese'
-  var TODO_ITEM_TWO   = 'feed the cat'
-  var TODO_ITEM_THREE = 'book a doctors appointment'
+  const todo_one = 'Buy some cheese'
+  const todo_two = 'Feed the cat'
+  const todo_three = 'Go to the gym'
 
   // begin the command here, which by will display
   // as a 'spinning blue state' in the UI to indicate
   // the command is running
-  var cmd = Cypress.log({
+ var cmd = Cypress.log({
     name: 'create default todos',
     message: [],
     consoleProps: function(){
@@ -28,7 +28,7 @@ Cypress.Commands.add('createDefaultTodos', function(){
       // which will print out to our browsers console
       // whenever we click on this command
       return {
-        'Inserted Todos': [TODO_ITEM_ONE, TODO_ITEM_TWO, TODO_ITEM_THREE]
+        'Inserted Todos': [todo_one, todo_two, todo_three]
       }
     }
   })
@@ -38,9 +38,9 @@ Cypress.Commands.add('createDefaultTodos', function(){
   // our command log
 
   cy.get('.new-todo', {log: false})
-    .type(TODO_ITEM_ONE   + '{enter}', {log: false})
-    .type(TODO_ITEM_TWO   + '{enter}', {log: false})
-    .type(TODO_ITEM_THREE + '{enter}', {log: false})
+    .type(todo_one   + '{enter}', {log: false})
+    .type(todo_two   + '{enter}', {log: false})
+    .type(todo_three + '{enter}', {log: false})
 
   cy.get('.todo-list li', {log: false})
     .then(function($listItems){

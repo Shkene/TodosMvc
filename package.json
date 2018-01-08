@@ -12,7 +12,8 @@
     "test": "npm run start & cypress run",
     "test:ci": "run-p --race start:ci cypress:run",
     "test:ci:chrome": "run-p --race start:ci cypress:run:chrome",
-    "test:ci:headed": "run-p --race start:ci cypress:run:headed"
+    "test:ci:headed": "run-p --race start:ci cypress:run:headed",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "director": "^1.2.0",
